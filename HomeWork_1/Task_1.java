@@ -16,6 +16,7 @@ public class Task_1 {
         System.out.println("Введите число: ");
         Scanner enter = new Scanner(System.in, "Cp866"); // "Cp866" - для русских букв
         Integer number = enter.nextInt();
+        enter.close();
         int sum = 0;
         int multi = 1;
         while (number > 0) {
