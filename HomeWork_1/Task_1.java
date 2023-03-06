@@ -17,11 +17,13 @@ public class Task_1 {
         Scanner enter = new Scanner(System.in, "Cp866"); // "Cp866" - для русских букв
         Integer number = enter.nextInt();
         int sum = 0;
+        int multi = 1;
         while (number > 0) {
             sum += number;
+            multi *= number;
             number --;
         }
         System.out.println(sum);
-
+        System.out.println(multi);
     }
 }
