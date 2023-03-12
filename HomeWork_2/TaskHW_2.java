@@ -25,6 +25,7 @@ public class TaskHW_2 {
             String temp;
             while ((temp = file.readLine()) != null) {
                 System.out.println(temp);
+                // Как распарсить строку через StringBuilder так и не понял
             }
             file.close();
         } catch (IOException e) {
