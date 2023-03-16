@@ -20,19 +20,21 @@ import java.util.Arrays;
 
 public class TaskHW_2 {
     public static void main(String[] args) throws Exception {
-        BufferedReader file = new BufferedReader(new FileReader("test.txt"));
-        String temp;
-        while ((temp = file.readLine()) != null) {
-            String line1 = temp.replace('"', ' ');
-            StringBuilder result = new StringBuilder("");
-            String [] arrayData = line1.split(",");
-            String [] listName = {"Студент ", " получил ", " по предмету "};
-            for (int i =0; i < arrayData.length; i++) {
-                String[] arrData = arrayData[i].split(":");
-                result.append(listName[i]);
-                result.append(arrData[1]);
-                }
-            System.out.println(result);
-        }
+
+        String sourse = "test.txt";
+        String[] gradeTable;
+        StringBuilder sb = new StringBuilder();
+
+		try (BufferedReader reader = new BufferedReader(new FileReader(sourse))) {
+			String line;
+            while ((line = reader.readLine()) != null) {
+                gradeTable = line.replace("\"", "").split(":|,");
+				sb.append("Студент ").append(gradeTable[1]).append(" получил ").append(gradeTable[3]).append(" по предмету ").append(gradeTable[5]).append(".\n");
+			}
+            System.out.println(sb);
+		}
+                catch (Exception e) {
+			e.printStackTrace();
+		}
     }
 }
